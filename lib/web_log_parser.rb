@@ -9,6 +9,7 @@ class WebLogParser
     @visits_log = []
   end
 
+  # Method to parse webserver.log file
   def file_parser
     File.foreach(@filepath) do |line|
       page_url, ip_address = line.split
@@ -16,16 +17,19 @@ class WebLogParser
     end
   end
 
+  # Method to group visits by page
   def visits_per_page
     @visits_log.group_by(&:page_url)
   end
 
+  # Method to count the number of visits and sort in descending order
   def page_visits_counter
     number_of_visits = visits_per_page.map { |page, visits| [page, visits.count] }
     ordered_visits = number_of_visits.sort_by { |h| -h.last }
     ordered_visits.join(' ')
   end
 
+  # Method to calculate unique visits per page
   def unique_visits_per_page
     unique_visits = visits_per_page.map do |key, value|
       [key, value.map(&:ip_address).uniq.count]
@@ -33,6 +37,7 @@ class WebLogParser
     unique_visits.sort_by { |h| -h.last }
   end
 
+  # Separate method to display unique visits to keep unique_visits_per_page method from being too long
   def display_unique_visits
     unique_visits_per_page.each do |value|
       value[1] = "#{value[1]} unique views"
