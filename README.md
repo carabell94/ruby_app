@@ -17,9 +17,10 @@ b. Returns the following:
 - Built tests for 2 files `visit.rb` & `web_log_parser.rb`
 - Checked my code passed my tests by running rspec in terminal
 
-## IMPROVEMENTS
+## COMMENTS
 
 - Had I had more time, I would have liked to further familiarise myself with testing and built more rspec tests for my script
+- I really enjoyed learning and writing tests for the first time!
 
 ## TO RUN
 
