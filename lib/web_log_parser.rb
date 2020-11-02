@@ -22,11 +22,13 @@ class WebLogParser
     @visits_log.group_by(&:page_url)
   end
 
-  # Method to count the number of visits and sort in descending order
+  # Method to count the number of visits and sort in descending order, then display with 'visits' appended to number
   def page_visits_counter
     number_of_visits = visits_per_page.map { |page, visits| [page, visits.count] }
     ordered_visits = number_of_visits.sort_by { |h| -h.last }
-    ordered_visits.join(' ')
+    ordered_visits.each do |value|
+      value[1] = "#{value[1]} visits"
+    end.flatten.join(' ')
   end
 
   # Method to calculate unique visits per page
