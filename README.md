@@ -14,9 +14,13 @@ b. Returns the following:
 - Built the basic functionality until parser was functional
 - Refactored my code to align with the DRY principle
 - Familiarised myself with building tests using rspec
-- Built tests for my 3 files `file_to_parse.rb, visit.rb, web_log_parser.rb`
+- Built tests for 2 files `visit.rb` & `web_log_parser.rb`
 - Checked my code passed my tests using rake
 
-# IMPROVEMENTS
+## IMPROVEMENTS
 
 - Had I had more time, I would have liked to further familiarise myself with testing and built more rspec tests for my script
+
+## TO RUN
+
+- From the `ruby_app` folder in your terminal, run `ruby lib/file_to_parse.rb webserver.log`
