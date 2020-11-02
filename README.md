@@ -14,7 +14,7 @@ b. Returns the following:
 - Built the basic functionality until parser was functional
 - Refactored my code to align with the DRY principle
 - Familiarised myself with building tests using rspec
-- Built 10 tests for 2 files `visit.rb` & `web_log_parser.rb`
+- Built 9 tests for 2 files `visit.rb` & `web_log_parser.rb`
 - Checked my code passed my tests by running rspec in terminal
 
 ## COMMENTS
