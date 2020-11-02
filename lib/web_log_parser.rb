@@ -2,11 +2,6 @@ require 'open-uri'
 require_relative 'visit'
 
 # TO DO:
-# Build initialize method taking filepath as an argument
-# Build a file_parser method using File.foreach
-# Build a visits_per_page method using group_by
-# Build a page_visit_counter method using map and count
-# Build a page_visit_sorter method using sort_by and reverse
 # Build a display_page_visits method using .join ?? Or combine with above
 # Build a unique_visits method using .uniq.count and .sort_by
 # Build a display_unique_visits method using .join ?? Or combine with above
@@ -23,4 +18,25 @@ class WebLogParser
       @visits_log = Visit.new(page_url, ip_address)
     end
   end
+
+  def visits_per_page
+    @visits_log.group_by(&:page_url)
+    # @visits_log.group_by { |number| number.page_url }
+  end
+
+  def page_visit_counter
+    number_of_visits = visits_per_page.map { |page, visits| [page, visits.count] }
+    number_of_visits.sort_by(&:last).reverse
+    # number_of_visits.sort_by { |h| h.last }.reverse
+  end
+
+  def display_page_visits
+  end
+
+  def unique_visits_per_page
+  end
+
+  def display_unique_visits
+  end
+
 end
