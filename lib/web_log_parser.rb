@@ -27,9 +27,10 @@ class WebLogParser
   end
 
   def unique_visits_per_page
-    visits_per_page.map do |key, value|
+    unique_visits = visits_per_page.map do |key, value|
       [key, value.map(&:ip_address).uniq.count]
-    end.sort_by { |h| -h.last }
+    end
+    unique_visits.sort_by { |h| -h.last }
   end
 
   def display_unique_visits
