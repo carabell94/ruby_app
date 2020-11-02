@@ -11,3 +11,9 @@ b. Returns the following:
 - Familiarised myself with the requirements of the task
 - Built my file structure
 - Pseudocoded the steps required to complete the task
+- Built the basic functionality until parser was functional
+- Refactored my code
+
+# IMPROVEMENTS
+
+- Had I had more time, I would have liked to further familiarise myself with testing and built more rspec tests for my code
