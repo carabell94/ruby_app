@@ -12,8 +12,11 @@ b. Returns the following:
 - Built my file structure
 - Pseudocoded the steps required to complete the task
 - Built the basic functionality until parser was functional
-- Refactored my code
+- Refactored my code to align with the DRY principle
+- Familiarised myself with building tests using rspec
+- Built tests for my 3 files `file_to_parse.rb, visit.rb, web_log_parser.rb`
+- Checked my code passed my tests using rake
 
 # IMPROVEMENTS
 
-- Had I had more time, I would have liked to further familiarise myself with testing and built more rspec tests for my code
+- Had I had more time, I would have liked to further familiarise myself with testing and built more rspec tests for my script
