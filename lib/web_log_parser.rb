@@ -1,3 +1,6 @@
+require 'open-uri'
+require_relative 'visit'
+
 # TO DO:
 # Build initialize method taking filepath as an argument
 # Build a file_parser method using File.foreach
@@ -11,9 +14,13 @@
 class WebLogParser
   def initialize(filepath)
     @filepath = filepath
+    @visits_log = []
   end
 
   def file_parser
     File.foreach(@filepath) do |line|
+      page_url, ip_address = line.split
+      @visits_log = Visit.new(page_url, ip_address)
+    end
   end
 end
