@@ -15,7 +15,7 @@ b. Returns the following:
 - Refactored my code to align with the DRY principle
 - Familiarised myself with building tests using rspec
 - Built tests for 2 files `visit.rb` & `web_log_parser.rb`
-- Checked my code passed my tests using rake
+- Checked my code passed my tests by running rspec in terminal
 
 ## IMPROVEMENTS
 
