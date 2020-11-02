@@ -1,3 +1,4 @@
+# Visit Model with 2 parameters: page_url and ip_address
 class Visit
   attr_reader :page_url, :ip_address
 

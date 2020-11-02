@@ -1,12 +1,9 @@
 require 'open-uri'
 require_relative 'visit'
 
-# TO DO:
-# Build a display_page_visits method using .join ?? Or combine with above
-# Build a unique_visits method using .uniq.count and .sort_by
-# Build a display_unique_visits method using .join ?? Or combine with above
-
 class WebLogParser
+  attr_reader :filepath, :visits_log
+
   def initialize(filepath)
     @filepath = filepath
     @visits_log = []
@@ -24,19 +21,20 @@ class WebLogParser
     # @visits_log.group_by { |number| number.page_url }
   end
 
-  def page_visit_counter
+  def page_visits_counter
     number_of_visits = visits_per_page.map { |page, visits| [page, visits.count] }
-    number_of_visits.sort_by(&:last).reverse
+    ordered_visits = number_of_visits.sort_by(&:last).reverse
     # number_of_visits.sort_by { |h| h.last }.reverse
-  end
-
-  def display_page_visits
+    ordered_visits.join(' ')
   end
 
   def unique_visits_per_page
+    visits_per_page.map do |key, value|
+      [key, value.map(&:ip_address).uniq.count]
+    end.sort_by(&:last).reverse
   end
 
   def display_unique_visits
+    unique_visits_per_page.join(' ')
   end
-
 end
