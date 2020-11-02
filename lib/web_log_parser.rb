@@ -8,7 +8,12 @@
 # Build a unique_visits method using .uniq.count and .sort_by
 # Build a display_unique_visits method using .join ?? Or combine with above
 
-class FileParser
-  def initialize
+class WebLogParser
+  def initialize(filepath)
+    @filepath = filepath
+  end
+
+  def file_parser
+    File.foreach(@filepath) do |line|
   end
 end
