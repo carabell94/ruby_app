@@ -33,11 +33,8 @@ class WebLogParser
   end
 
   def display_unique_visits
-    # ordered_unique_visits =
-    numbers = unique_visits_per_page.flatten.each_slice(2).map(&:last)
-    # .join(' ')
-    # ordered_unique_visits.each do |visit|
-
-    # unique views
+    unique_visits_per_page.each do |value|
+      value[1] = "#{value[1]} unique views"
+    end.flatten.join(' ')
   end
 end
