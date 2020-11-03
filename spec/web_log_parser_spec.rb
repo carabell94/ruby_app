@@ -7,9 +7,9 @@ describe WebLogParser do
   end
 
   describe 'initialize' do
-    # it 'should contain a filepath' do
-    #   expect(@file.path).to eq('webserver.log')
-    # end
+    it 'should contain a filepath' do
+      expect(@file.filepath).to eq('webserver.log')
+    end
 
     it 'should contain an empty array for visits' do
       expect(@file.visits_log).to eq([])
