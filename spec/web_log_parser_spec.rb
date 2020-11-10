@@ -40,7 +40,14 @@ describe WebLogParser do
 
     it 'should sort the visits in descending order' do
       @file.file_parser
-      expect(@file.page_visits_counter).to start_with('/about/2 90 visits /contact 89 visits')
+      expect(@file.page_visits_counter).to start_with([["/about/2", 90]])
+    end
+  end
+
+    describe '#display_unique_visits' do
+    it 'should calculate unique visits per page' do
+      @file.file_parser
+      expect(@file.display_unique_visits).to start_with('/help_page/1 23')
     end
   end
 
