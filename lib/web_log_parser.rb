@@ -29,6 +29,7 @@ class WebLogParser
     number_of_visits.sort_by { |h| -h.last }
   end
 
+  # split into separate method for readability
   def display_visits
     page_visits_counter.each do |value|
       value[1] = "#{value[1]} visits"
