@@ -44,7 +44,7 @@ describe WebLogParser do
     end
   end
 
-    describe '#display_unique_visits' do
+  describe '#display_unique_visits' do
     it 'should calculate unique visits per page' do
       @file.file_parser
       expect(@file.display_unique_visits).to start_with('/help_page/1 23')
