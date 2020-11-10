@@ -1,5 +1,6 @@
 require 'open-uri'
 require_relative 'visit'
+require 'pry-byebug'
 
 class WebLogParser
   attr_reader :filepath, :visits_log

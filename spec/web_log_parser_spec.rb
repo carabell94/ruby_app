@@ -40,7 +40,7 @@ describe WebLogParser do
 
     it 'should sort the visits in descending order' do
       @file.file_parser
-      expect(@file.page_visits_counter).to start_with("/about/2 90 visits /contact 89 visits")
+      expect(@file.page_visits_counter).to start_with('/about/2 90 visits /contact 89 visits')
     end
   end
 
