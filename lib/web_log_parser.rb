@@ -2,6 +2,13 @@ require 'open-uri'
 require_relative 'visit'
 # require 'pry-byebug'
 
+# split more for separation of concerns - think of how it would work with bigger programs
+# e.g. logsorter class etc, split up better
+
+# don't need to use global variables directly due to the attr_reader
+
+# encapsulation: make more methods private!! including attr_readers
+
 class WebLogParser
   attr_reader :filepath, :visits_log
 
@@ -17,6 +24,9 @@ class WebLogParser
       @visits_log << Visit.new(page_url, ip_address)
     end
   end
+
+  # foreach useful for larger files too - parses the file line by line,
+  # file read reads it all at once, processing speeds slower
 
   # Method to group visits by page
   def visits_per_page
@@ -49,5 +59,19 @@ class WebLogParser
     unique_visits_per_page.each do |value|
       value[1] = "#{value[1]} unique views"
     end.flatten.join(' ')
+  end
+
+  def fizz_buzz
+    (1..20).map do |i|
+      if (i % 3).zero? && (i % 5).zero?
+        puts 'FizzBuzz'
+      elsif (i % 3).zero?
+        puts 'Fizz'
+      elsif (i % 5).zero?
+        puts 'Buzz'
+      else
+        puts i
+      end
+    end
   end
 end

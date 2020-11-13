@@ -12,3 +12,6 @@ else
   puts "Unique Page Views: #{file_to_parse.display_unique_visits}"
   puts '-----'
 end
+
+# when using launch files, can put the following comment at the top of the file to start it without passing the argument
+# !/usr/local/bin/ruby -w

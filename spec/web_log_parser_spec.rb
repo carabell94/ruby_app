@@ -1,6 +1,9 @@
 require 'web_log_parser'
 require 'visit'
 
+# extract @file.file_parser into the subject - research this! keep code DRY
+# integration (test end-to-end) v unit tests (specifically test method)
+
 describe WebLogParser do
   before :each do
     @file = WebLogParser.new('webserver.log')
